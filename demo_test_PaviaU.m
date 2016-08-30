@@ -124,9 +124,9 @@ sz = [610 340 103];
 %         [gch seg] = GraphCut('expand',gch);
 %         gch = GraphCut('close', gch);
 
-        Dc_reshape = reshape(Dc,[610*340,9]);
+        Dc_reshape = -reshape(Dc,[610*340,9]);
         h = GCO_Create(610*340, 9);
-        GCO_SetDataCost(h, -Dc_reshape');
+        GCO_SetDataCost(h, Dc_reshape');
         GCO_SetSmoothCost(h,beta*Sc);
         GCO_SetNeighbors(h,SetNeighbour(610,340));
         GCO_Expansion(h);

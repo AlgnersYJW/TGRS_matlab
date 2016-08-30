@@ -3,7 +3,7 @@ NumSites = Row*Colume;
 CMatrix = sparse(NumSites, NumSites);
 
 %one order neighbors setting
-% for i=1:NumSites
+% for i=1:NumSites*NumSites
 %     if i+1 <= NumSites && mod(i,Colume)~=0
 %         CMatrix(i,i+1) = 1;
 %     end
@@ -13,20 +13,11 @@ CMatrix = sparse(NumSites, NumSites);
 % end
 
 %one and two order neighbors setting
-for i=1:NumSites
+for i=i:NumSites*NumSites
     if i+1 <= NumSites && mod(i,Colume)~=0
         CMatrix(i,i+1) = 1;
     end
-    if i+Colume-1 <= NumSites && mod(i,Colume)~=1
+    if i+Colume-1 <= NumSites && mode(i,Colume)~=1
         CMatrix(i,i+Colume-1) = 1;
     end
-    if i+Colume <= NumSites
-        CMatrix(i,i+Colume) = 1;
-    end
-    if i+Colume+1 <= NumSites && mod(i,Colume)~=0
-        CMatrix(i,i+Colume+1) = 1;
-    end
-end
-
-    
-    
+    if i+
