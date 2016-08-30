@@ -126,15 +126,10 @@ sz = [610 340 103];
 
         Dc_reshape = reshape(Dc,[610*340,9]);
         h = GCO_Create(610*340, 9);
-        GCO_SetDataCost(h, -Dc_reshape');
-        GCO_SetSmoothCost(h,beta*Sc);
-        GCO_Expansion(h);
-        seg_T = GCO_GetLabeling(h);
-        GCO_Delete(h);
         
-        seg = seg_T';
+        
 
 
-        [OA_seg,kappa_seg,AA_seg,CA_seg] = calcError( test1(2,:)-1, seg(test1(1,:))-1, 1: no_classes);
+        [OA_seg,kappa_seg,AA_seg,CA_seg] = calcError( test1(2,:)-1, seg(test1(1,:)), 1: no_classes);
         
            

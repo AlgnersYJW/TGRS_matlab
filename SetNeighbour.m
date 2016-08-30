@@ -1,5 +1,5 @@
 function CMatrix = SetNeighbour(Row, Colume)
-NumSites = int16(Row*Colume);
+NumSites = int32(Row*Colume);
 CMatrix = zeros(NumSites, NumSites);
 for i=1:NumSites
     if i+1 <= NumSites && mod(i,Row)~=0
