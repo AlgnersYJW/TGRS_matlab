@@ -128,7 +128,7 @@ sz = [610 340 103];
         h = GCO_Create(610*340, 9);
         GCO_SetDataCost(h, Dc_reshape');
         GCO_SetSmoothCost(h,beta*Sc);
-        GCO_SetNeighbors(h,SetNeighbour(610,340));
+%        GCO_SetNeighbors(h,SetNeighbour(610,340));
         GCO_Expansion(h);
         seg_T = GCO_GetLabeling(h);
         GCO_Delete(h);

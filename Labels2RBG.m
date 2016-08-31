@@ -1,0 +1,7 @@
+function resultsVis = Labels2RBG(sites, labels , row, column)
+resultsVis = zeros(row, column);
+resultsVis(sites) = labels;
+%colour panel 
+map = [0 0 0; 128 128 128; 128 0 0; 128 0 128; 0 255 0; 0 255 255; 255 0 255; 255 0 0; 255 255 0;]/255;
+Vis = label2rgb(resultsVis, map, 'w');
+imshow(Vis);  
